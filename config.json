@@ -1,0 +1,39 @@
+{
+    "log": {
+      "level": "info"
+    },
+    "dns": {},
+    "inbounds": [
+      {
+        "type": "vmess",
+        "tag": "vmess-in",
+        "listen": "0.0.0.0",
+        "listen_port": 18080,
+        "users": [
+          {
+            "name": "ws@vmess.com",
+            "uuid": "UUID",
+            "alterId": 0
+          }
+        ],
+        "transport": {
+          "type": "ws",
+          "path": "/wsbackend",
+          "max_early_data": 2048,
+          "early_data_header_name": "Sec-WebSocket-Protocol"
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "type": "direct",
+        "tag": "direct-out"
+      }
+    ],
+    "route": {
+      "geoip": {},
+      "geosite": {},
+      "rules": []
+    }
+  }
+  
